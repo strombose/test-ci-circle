@@ -7,12 +7,9 @@ workflows:
     jobs:
       - helloworld
 
-commands:
+jobs:
   helloworld:
-    description: 'Just say hello'
-    parameters:
-      greetee:
-        type: string
-        default: 'World'
     steps:
-      - run: echo 'Hello << parameters.greetee >>!'
+      - greet:
+          command: |
+            echo 'Hello World!'
